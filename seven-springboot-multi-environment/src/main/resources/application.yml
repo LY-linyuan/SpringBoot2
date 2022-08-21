@@ -1,0 +1,10 @@
+# 激活使用那个配置文件
+# 使用的dev
+# spring:
+#   profiles:
+#     active: dev
+
+# 使用test的环境
+spring:
+  profiles:
+    active: test
