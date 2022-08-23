@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试rest的请求方式</title>
+</head>
+<body>
+    <form action="student/test" method="post" >
+        <input type="hidden" name="_method" value="put">
+        <input type="submit" value="测试请求方式">
+    </form>
+
+    <form action="student/testdelete" method="post" >
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="测试请求方式">
+    </form>
+
+</body>
+</html>
