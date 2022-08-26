@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>inline</title>
+    <script type="text/javascript" th:inline="javascript" >
+        var name = [[${name}]]
+        var age = [[${age}]]
+        // alert("获取模板中的数据  " + name + age);
+
+        function fun() {
+            alert("获取模板中的数据  " + name + [[${age}]]);
+        }
+    </script>
+</head>
+<body>
+    <h3>inline</h3>
+
+    <input type="button" name="btn" value="单击获取模板数据" onclick="fun()">
+    <div>
+        <h3>内联文本 使用内联表达式显示变量值</h3>
+        <div th:inline="text">
+            <p>like[[${name111}]]</p>
+            <p>like[[${name}]]</p>
+            <p>[[${age}]]</p>
+            <p>[[${sex}]]</p>
+            <p>[[${user}]]</p>
+            <p>[[${user.id}]]</p>
+            <p>[[${user.name}]]</p>
+            <p>[[${user.sex}]]</p>
+            <p>[[${user.age}]]</p>
+        </div>
+        <hr>
+        <p>like[[${name}]]</p>
+        <p>[[${age}]]</p>
+    </div>
+</body>
+</html>

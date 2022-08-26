@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>选择变量表达式</title>
+</head>
+<body>
+    <h3>选择变量表达式 *{key}</h3>
+
+    <div style="margin-left: 400px">
+        <p th:text="${site}"></p>
+        <p>获取SysUser对象的属性值</p>
+        <p th:text="${mylike.id}">id</p>
+        <p th:text="${mylike.name}">姓名</p>
+        <p th:text="${mylike.sex}">性别</p>
+        <p th:text="${mylike.age}">年龄</p>
+        <p th:text="${mylike.getName()}">获取姓名使用get方法</p>
+        <p>使用*{} 获取SysUser</p>
+        <div th:object="${mylike}">
+            <p th:text="*{id}"></p>
+            <p th:text="*{name}"></p>
+            <p th:text="*{sex}"></p>
+            <p th:text="*{age}"></p>
+        </div>
+        <p>使用*{}完整的标识 对象的属性值</p>
+        <p th:text="*{mylike.name}"></p>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>each循环map</title>
+</head>
+<body>
+    <h3>each循环map</h3>
+    <div>
+        <table border="1" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <td>编号</td>
+                    <td>key</td>
+                    <td>id</td>
+                    <td>name</td>
+                    <td>sex</td>
+                    <td>age</td>
+                    <td>姓名</td>
+                    <td>是否是第一行</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="user, userStat:${userMap}">
+                    <td th:text="${userStat.count} + '/' + ${userStat.size}"></td>
+                    <td th:text="${user.key}"></td>
+                    <td th:text="${user.value.id}"></td>
+                    <td th:text="${user.value.name}"></td>
+                    <td th:text="${user.value.sex}"></td>
+                    <td th:text="${user.value.age}"></td>
+                    <td th:text="${userStat.current.value.name}"></td>
+                    <td th:text="${userStat.first}"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table border="1" cellpadding="0" cellspacing="0">
+            <thead>
+            <tr>
+                <td>编号</td>
+                <td>key</td>
+                <td>value</td>
+                <td>value</td>
+                <td>是否是第一行</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="str, strStat:${strMap}">
+                <td th:text="${strStat.count} + '/' + ${strStat.size}"></td>
+                <td th:text="${str.key}"></td>
+                <td th:text="${str.value}"></td>
+                <td th:text="${strStat.current.value}"></td>
+                <td th:text="${strStat.first}"></td>
+            </tr>
+            </tbody>
+        </table>
+        <h3>循环listmap</h3>
+            <div th:each="ListMap: ${listMap}">
+                <table border="1" cellpadding="0" cellspacing="0">
+                    <thead>
+                    <tr>
+                        <td>编号</td>
+                        <td>key</td>
+                        <td>id</td>
+                        <td>name</td>
+                        <td>sex</td>
+                        <td>age</td>
+                        <td>姓名</td>
+                        <td>是否是第一行</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="user, userStat:${ListMap}">
+                        <td th:text="${userStat.count} + '/' + ${userStat.size}"></td>
+                        <td th:text="${user.key}"></td>
+                        <td th:text="${user.value.id}"></td>
+                        <td th:text="${user.value.name}"></td>
+                        <td th:text="${user.value.sex}"></td>
+                        <td th:text="${user.value.age}"></td>
+                        <td th:text="${userStat.current.value.name}"></td>
+                        <td th:text="${userStat.first}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <hr color="red">
+            </div>
+
+    </div>
+</body>
+</html>

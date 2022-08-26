@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>if unless</title>
+</head>
+<body>
+    <h3>if unless</h3>
+    <div>
+        <h3>if的使用</h3>
+        <p th:if="${sex == 'm'}">男</p>
+        <p th:if="${isLogin}">已经登录系统</p>
+        <p th:if="${age > 15}">年龄大于15</p>
+        <p th:if="${age > 15}" th:text="${age}">年龄大于15</p>
+        <p th:if="${age > 20}" th:text="${age}">年龄大于15</p>
+        <!--""空字符串是真-->
+        <p th:if="${name}">name 是  ''''</p>
+        <!--null是false-->
+        <p th:if="${isOld}">isold</p>
+
+    </div>
+
+    <div>
+        <h3>unless的使用</h3>
+        <p th:unless="${sex == 'm'}">女</p>
+        <p th:unless="${isLogin}">已经登录系统</p>
+        <p th:unless="${age > 15}">年龄大于15</p>
+        <p th:unless="${age > 15}" th:text="${age}">年龄大于15</p>
+        <p th:unless="${age > 20}" th:text="${age}">年龄大于15</p>
+        <!--""空字符串是真-->
+        <p th:unless="${name}">name 是  ''''</p>
+        <!--null是false-->
+        <p th:unless="${isOld}">isold</p>
+
+    </div>
+
+</body>
+</html>

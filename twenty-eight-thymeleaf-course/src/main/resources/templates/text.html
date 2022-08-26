@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>字面量</title>
+
+</head>
+<body>
+    <h3>字面量</h3>
+
+    <div>
+        <h3>文本字面量: 使用单引号括起来的字符串</h3>
+        <p th:text="'like ' + ${name} + ' city ' + ${city}">数据显示</p>
+        <h3>数字字面量</h3>
+        <p th:text="${20 > 5}">20 大于 5</p>
+        <h3>boolean字面量</h3>
+        <p th:if="${isLogin == true}">用户已经登录</p>
+        <p th:if="${isLogin}">用户已经登录222</p>
+        <h3>null字面量</h3>
+        <p th:if="${user != null}">有myuser数据</p>
+    </div>
+</body>
+</html>

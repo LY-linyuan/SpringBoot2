@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串连接</title>
+
+</head>
+<body>
+    <h3>字符串连接</h3>
+
+    <div>
+        <h3>字符串连接方式1 :  使用单引号括起来</h3>
+        <p th:text="'like ' + ${name} + ' city ' + ${city}">数据显示</p>
+        <h3>字符串连接方式2 :  使用双竖线括起来  |字符串和表达式|</h3>
+        <p th:text="|like | + ${name} + | city | + ${city}">数据显示</p>
+        <p th:text="|like  ${name}  city  ${city} ${user}|">数据显示</p>
+
+    </div>
+</body>
+</html>
